@@ -1,0 +1,85 @@
+Features of Angular 2
+
+1) Two-way Data Binding
+
+2) Powerful Routing support
+
+3) Expressive HTML - Templates
+
+4) Modular by DEsign
+
+5) Built in Back End Support (Database, Log, WebService)
+
+6) Active Community
+
+
+--------------------------------------
+Key differences b/w Angular 1 & Angular 2
+
+1) Support for ES6
+
+2) Componenets and COntrollers
+
+3) Directives *ngFor
+
+$) Data Bindings
+
+5) $scopes are out
+
+6) Filters are renamed to Pipes
+
+7) Plaform specific Bootstrap
+
+8) Services - Factory, Abstract Factory, Utilities, Singleton
+
+9) Mobile Support
+
+------------------------------------------
+
+Angular Architecture
+
+1) Component - Root, Feature
+
+2) Directives - *ngFor, *ngIf, *ngIfelse, *ngSwitch + Custom Directives.........manipulation the DOM
+
+3) Services - Singleton, Share the services obj
+
+4) Pipes - + Custom Pipes
+
+------------------------------------------------------------
+
+Angular 2
+Angular CLI
+
+Install angular cli: npm install -g @angular/cli
+
+ng -v
+
+Create a Project Structure: ng new storeapp
+
+cd storeapp
+
+package.json
+"boootstrap"
+"font-awesome"
+
+npm install
+.angular-cli.json
+
+"styles": [
+ 
+       "styles.css",
+ 
+       "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+ 
+       "../node_modules/font-awesome/css/font-awesome.min.css"
+  
+    ]
+
+Start the server
+
+ng serve
+
+
+
+
