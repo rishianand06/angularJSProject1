@@ -1,0 +1,8 @@
+https://vsavkin.com/migrating-angular-1-applications-to-angular-2-in-5-simple-steps-40621800a25b
+
+
+https://codecraft.tv/courses/angular/unit-testing/overview/
+
+
+https://auth0.com/blog/angular2-series-working-with-pipes/
+
