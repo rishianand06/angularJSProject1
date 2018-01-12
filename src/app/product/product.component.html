@@ -1,0 +1,37 @@
+<nav class="navbar navbar-inverse bg-inverse">
+        <a class="navbar-brand">Product Catalog</a>
+        <app-cartsummary></app-cartsummary>
+</nav>
+
+<div class="col-xs-3 p-a-1">
+   <button (click) ="changeCategory()" class="btn btn-primary btn-block">
+       Home
+   </button>
+   <button *ngFor="let category of categories" 
+        (click) ="changeCategory(category)" 
+        class="btn btn-secondary btn-block">
+            {{category}}
+    </button>
+    <button routerLink="/admin" class="btn btn-danger btn-block">
+        Admin
+    </button>
+</div>
+
+<div class="col-xs-9 p-a-1">
+    <div *ngFor = "let product of products" class="card card-outline primary">
+
+        <h4 class="card-header">
+            {{product.name}}
+            <span class="tag tag-pill tag-primary pull-right">
+                {{product.price | currency:"INR":2.2-4}}
+            </span>
+        </h4>
+        <div class="card-text p-a-1">
+            {{product.description}}
+            <button class="btn btn-success btn-sm pull-xs-right"
+                (click) = "addProductToCart(product)">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>

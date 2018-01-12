@@ -1,0 +1,62 @@
+<nav class="navbar navbar-inverse bg-inverse">
+    <a class="navbar-brand">Cart Details</a>
+    <app-cartsummary></app-cartsummary>
+</nav>
+<div class="m-a-1">
+    <h2 class="text-xs-center">Your Cart</h2>
+    <table class="table table-bordered table-striped p-a-1">
+        <thead>
+            <th>Quantity</th>
+            <th>Product</th>
+            <th class="text-xs-right">Price</th>
+            <th class="text-xs-right">SubTotal</th>
+        </thead>
+        <tbody>
+            <tr *ngIf="cart.itemCount == 0">
+                <td colspan="4" class="text-xs-center">
+                    Your cart is empty
+                </td>
+            </tr>
+            <tr *ngFor="let item of cart.cartItems">
+                <td>
+                    <input type="number" 
+                        [value] ="item.quantity"
+                        style = "width:5em"
+                        (change) = "cart.addItem(item.product, $event.target.value)"/>
+                </td>
+                <td>
+                    {{item.product.name}}
+                </td>
+                <td class="text-xs-right">
+                    {{item.product.price | currency:'INR':2.2-4}}
+                </td>
+                <td class="text-xs-right">
+                    {{item.subTotal | currency:'INR':2.2-4}}
+                </td>
+                <td class="text-xs-right">
+                   <button class="btn btn-sm btn-danger"
+                    (click) = "cart.removeItem(item.product.id)">
+                        Remove
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-xs-right">
+                    Total:
+                </td>
+                <td class="text-xs-right">
+                    {{cart.totalPrice | currency:'INR':2.2-4 }}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="text-xs-center">
+    <button class="btn btn-primary" routerLink="/product">Go to Products</button>
+    <button class="btn btn-secondary" routerLink="/checkout" [disabled]="cart.itemCount == 0">
+        Checkout
+    </button>
+</div>

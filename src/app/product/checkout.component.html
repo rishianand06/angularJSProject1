@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse bg-inverse">
+        <a class="navbar-brand">Checkout Page</a>
+        <app-cartsummary></app-cartsummary>
+</nav>
+
+<div *ngIf="orderSent == false" class="m-a-1 text-xs-center">
+        <h2>Thanks</h2>
+        <p>Thanks for placing your order.</p>
+        <button class="btn btn-primary" routerLink="/product">Go To Products</button>
+</div>
+<form *ngIf="orderSent == true" class="m-a-1" (ngSubmit) = "submitOrder()">
+
+        <div class="form-group">
+                <label>Enter the Name:</label>
+                <input class="form-control" type="text" [(ngModel)] = "order.name" name="name">
+        </div>
+        <div class="form-group">
+                <label>Enter the address:</label>
+                <input class="form-control" type="text" [(ngModel)] = "order.address" name="address">
+        </div>
+        <div class="form-group">
+                <label>Enter the Mobileno:</label>
+                <input class="form-control" type="text" [(ngModel)] = "order.mobileno" name="mobileno">
+        </div>
+
+
+        <div class="text-xs-center">p
+                <button class="btn btn-primary" routerLink="/product">Go To Products</button>
+                <button class="btn btn-secondary" type="submit">Submit</button>
+        </div>
+</form>
